@@ -19,11 +19,16 @@ Usage
 ```python
 import py_nextbus
 client = py_nextbus.NextBusClient(output_format='json')
+
 agencies = client.get_agency_list()
 
-client = py_nextbus.NextBusClient(output_format='json', agency='ucb')
-client.get_route_list()
+# Set client agency for further requests
+client = py_nextbus.NextBusClient(output_format='json', agency='sf-muni')
 
-client.get_route_config('peri')
-client.get_predictions(stop_tag='tolmhall', route_tag='peri',)
+# View routes and see available stops, etc
+client.get_route_list()
+client.get_route_config('25')
+
+# Get prediction for a route at a stop
+client.get_predictions(stop_tag='7617', route_tag='25')
 ```
