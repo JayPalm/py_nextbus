@@ -9,6 +9,7 @@ LOG = logging.getLogger()
 NEXTBUS_XML_FEED_URL = 'http://webservices.nextbus.com/service/publicXMLFeed'
 NEXTBUS_JSON_FEED_URL = 'http://webservices.nextbus.com/service/publicJSONFeed'
 
+
 class NextBusClient():
     """Minimalistic client for making requests using the NextBus API.
 
@@ -191,7 +192,7 @@ class NextBusClient():
         }
 
         if route_tag is not None:
-            params['routeTag'] = route_tag
+            params['r'] = route_tag
 
         return self._perform_request(params=params)
 
