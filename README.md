@@ -16,8 +16,14 @@ Install with Pip:
 Usage
 ---
 
-```
->>> import py_nextbus
->>> client = py_nextbus.NextBusClient(output_format='json')
->>> agencies = client.get_agency_list()
+```python
+import py_nextbus
+client = py_nextbus.NextBusClient(output_format='json')
+agencies = client.get_agency_list()
+
+client = py_nextbus.NextBusClient(output_format='json', agency='ucb')
+client.get_route_list()
+
+client.get_route_config('peri')
+client.get_predictions(stop_tag='tolmhall', route_tag='peri',)
 ```
